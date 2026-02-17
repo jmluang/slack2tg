@@ -1,0 +1,14 @@
+slack:
+  app_token: ${SLACK_APP_TOKEN}
+  bot_token: ${SLACK_BOT_TOKEN}
+
+telegram:
+  bot_token: ${TELEGRAM_BOT_TOKEN}
+
+# Channel 映射配置
+# 格式: slack_channel_id: telegram_chat_id
+# 支持环境变量: ${SLACK_CHANNEL_ID} 和 ${TELEGRAM_CHANNEL}
+channel_mappings:
+  ${SLACK_CHANNEL_ID}: "${TELEGRAM_CHANNEL}"
+  # 或者直接写死（不推荐）：
+  # C0123456789: "-1001234567890"

@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  slack-to-telegram:
+    build: .
+    container_name: slack-to-telegram
+    restart: unless-stopped
+    environment:
+      - SLACK_APP_TOKEN=${SLACK_APP_TOKEN}
+      - SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN}
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
