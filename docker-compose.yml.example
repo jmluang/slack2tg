@@ -9,6 +9,9 @@ services:
       - SLACK_APP_TOKEN=${SLACK_APP_TOKEN}
       - SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN}
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - SLACK_CHANNEL_ID=${SLACK_CHANNEL_ID}
+      - TELEGRAM_CHANNEL=${TELEGRAM_CHANNEL}
+      - APP_DEBUG=${APP_DEBUG:-false}
     volumes:
       - ./config.yaml:/app/config.yaml:ro
     logging:
